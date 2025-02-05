@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.actions.act_window" id="action_lista_modulos">
+            <field name="name">Listado de modulos del instituto - ARG</field>
+            <field name="res_model">gestion_ciclos_instituto.modulo</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="view_modulo" model="ir.ui.view">
+            <field name="name">Modulos</field>
+            <field name="model">gestion_ciclos_instituto.modulo</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="modulo"/>
+                    <field name="ciclo_id"/>
+                    <field name="alumno_ids"/>
+                    <field name="profesor_id"/>
+                </tree>
+            </field>
+        </record>            
+    </data>    
+</odoo>

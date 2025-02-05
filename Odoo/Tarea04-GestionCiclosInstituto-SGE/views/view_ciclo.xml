@@ -1,0 +1,20 @@
+<odoo>
+    <data>
+        <record model="ir.actions.act_window" id="action_lista_ciclos">
+            <field name="name">Listado de ciclos del instituto - ARG</field>
+            <field name="res_model">gestion_ciclos_instituto.ciclo</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="view_ciclo" model="ir.ui.view">
+            <field name="name">Ciclos</field>
+            <field name="model">gestion_ciclos_instituto.ciclo</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ciclo"/>
+                    <field name="modulo_ids"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,42 @@
+<odoo>
+<data>
+    <!-- Vista de lista (tree) -->
+    <record id="view_library_category_tree" model="ir.ui.view">
+        <field name="name">library.category.tree</field>
+        <field name="model">library.category</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vista de formulario (form) -->
+    <record id="view_library_category_form" model="ir.ui.view">
+        <field name="name">library.category.form</field>
+        <field name="model">library.category</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group string="Información de la Categoría">
+                        <field name="name"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Acción para mostrar la lista de categorías -->
+    <record id="action_library_category" model="ir.actions.act_window">
+        <field name="name">Categorías</field>
+        <field name="res_model">library.category</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menú para acceder a categorías -->
+    <menuitem id="menu_library_root" name="Biblioteca"/>
+    <menuitem id="menu_library_categories" name="Categorías" parent="menu_library_root" action="action_library_category"/>
+    </data>
+</odoo>

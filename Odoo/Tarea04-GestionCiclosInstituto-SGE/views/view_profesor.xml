@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.actions.act_window" id="action_lista_profesores">
+            <field name="name">Listado de profesores del instituto - ARG</field>
+            <field name="res_model">gestion_ciclos_instituto.profesor</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="view_profesor" model="ir.ui.view">
+            <field name="name">Profesor</field>
+            <field name="model">gestion_ciclos_instituto.profesor</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nombre"/>
+                    <field name="apellidos"/>
+                    <field name="dni"/>
+                    <field name="modulo_ids"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

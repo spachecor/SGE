@@ -1,0 +1,41 @@
+<odoo>
+    <data>
+        <!-- Vista de lista (tree) -->
+        <record id="view_library_author_tree" model="ir.ui.view">
+            <field name="name">library.author.tree</field>
+            <field name="model">library.author</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" string="Nombre" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista de formulario (form) -->
+        <record id="view_library_author_form" model="ir.ui.view">
+            <field name="name">library.author.form</field>
+            <field name="model">library.author</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group string="Información del Autor">
+                            <field name="name" string="Nombre" />
+                            <field name="biography" string="Biografía" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Acción para mostrar la treea de autores -->
+        <record id="action_library_author" model="ir.actions.act_window">
+            <field name="name">Autores</field>
+            <field name="res_model">library.author</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Menú para acceder a autores -->
+        <menuitem id="menu_library_authors" name="Autores" parent="menu_library_root"
+            action="action_library_author" />
+    </data>
+</odoo>

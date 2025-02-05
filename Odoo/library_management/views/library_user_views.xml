@@ -1,0 +1,46 @@
+<odoo>
+<data>
+    <!-- Vista de lista (tree) -->
+    <record id="view_library_user_tree" model="ir.ui.view">
+        <field name="name">library.user.tree</field>
+        <field name="model">library.user</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="full_name"/>
+                <field name="email"/>
+                <field name="phone"/>
+                <field name="registration_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vista de formulario (form) -->
+    <record id="view_library_user_form" model="ir.ui.view">
+        <field name="name">library.user.form</field>
+        <field name="model">library.user</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group string="Información del Usuario">
+                        <field name="full_name"/>
+                        <field name="email"/>
+                        <field name="phone"/>
+                        <field name="registration_date"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Acción para mostrar la lista de usuarios -->
+    <record id="action_library_user" model="ir.actions.act_window">
+        <field name="name">Usuarios</field>
+        <field name="res_model">library.user</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menú para acceder a Usuarios -->
+    <menuitem id="menu_library_root" name="Biblioteca"/>
+    <menuitem id="menu_library_users" name="Usuarios" parent="menu_library_root" action="action_library_user"/>
+    </data>
+</odoo>

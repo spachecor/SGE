@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem name="Gestion Ciclos" id="gestion_ciclos_menu_root"/>
+        
+        <menuitem name="Ciclos y modulos" id="gestion_ciclos_menu_ciclos_y_modulos" parent="gestion_ciclos_menu_root"/>
+        <menuitem name="Profesores y alumnos" id="gestion_ciclos_menu_profesores_y_alumnos" parent="gestion_ciclos_menu_root"/>
+
+
+        <menuitem name="Ciclos" id="gestion_ciclos_menu_ciclos" parent="gestion_ciclos_menu_ciclos_y_modulos" action="action_lista_ciclos"/>
+        <menuitem name="Modulos" id="gestion_ciclos_menu_modulos" parent="gestion_ciclos_menu_ciclos_y_modulos" action="action_lista_modulos"/>
+        <menuitem name="Alumnos" id="gestion_ciclos_menu_alumnos" parent="gestion_ciclos_menu_profesores_y_alumnos" action="action_lista_alumnos"/>
+        <menuitem name="Profesores" id="gestion_ciclos_menu_profesores" parent="gestion_ciclos_menu_profesores_y_alumnos" action="action_lista_profesores"/>
+    </data>
+</odoo>
