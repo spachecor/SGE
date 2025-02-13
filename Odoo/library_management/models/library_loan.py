@@ -9,7 +9,10 @@ class LibraryLoan(models.Model):
     user_id = fields.Many2one('library.user', string='Usuario', required=True, index=True)
     book_id = fields.Many2one('library.book', string='Libro', required=True, index=True)
     loan_date = fields.Date(string='Fecha de Préstamo', default=fields.Date.today)
-    return_date = fields.Date(string='Fecha de Devolución')
+    return_date = fields.Date(
+        string='Fecha de Devolución',
+        default=lambda self: fields.Date.today() + timedelta(days=7)
+    )
     status = fields.Selection([
         ('pending', 'Pendiente'),
         ('returned', 'Devuelto'),
