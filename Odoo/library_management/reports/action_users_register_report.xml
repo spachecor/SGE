@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_users_register_report" model="ir.actions.report">
+            <field name="name">Informe de Usuarios Registrados</field>
+            <field name="model">library.user</field> <!-- Modelo del informe -->
+            <field name="report_type">qweb-pdf</field> <!-- Tipo de reporte -->
+            <field name="report_file">library_management.report_users_register</field> <!-- Archivo del reporte -->
+            <field name="report_name">library_management.report_users_register</field> <!-- Nombre del reporte (OBLIGATORIO) -->
+            <field name="binding_model_id" ref="model_library_user"/> <!-- Enlace al modelo -->
+        </record>
+    </data>
+</odoo>

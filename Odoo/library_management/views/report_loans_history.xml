@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_loans_history">
+        <t t-call="web.html_container">
+            <t t-call="web.internal_layout">
+                <div class="page">
+                    <h2 style="text-align: center;">Historial de Préstamos</h2>
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr style="background-color: #f2f2f2;">
+                                <th style="width: 20%;">Usuario</th>
+                                <th style="width: 20%;">Libro</th>
+                                <th style="width: 20%;">Fecha de Préstamo</th>
+                                <th style="width: 20%;">Fecha de Devolución</th>
+                                <th style="width: 20%;">Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="docs" t-as="loan">
+                                <tr>
+                                    <td><t t-esc="loan.user_id and loan.user_id.full_name or 'Desconocido'"/></td>
+                                    <td><t t-esc="loan.book_id.title or 'Sin título'"/></td>
+                                    <td><t t-esc="loan.loan_date or 'No disponible'"/></td>
+                                    <td><t t-esc="loan.return_date or 'No asignada'"/></td>
+                                    <td>
+                                        <t t-if="loan.status == 'pending'">
+                                            <span style="color: orange;">Pendiente</span>
+                                        </t>
+                                        <t t-if="loan.status == 'returned'">
+                                            <span style="color: green;">Devuelto</span>
+                                        </t>
+                                        <t t-if="loan.status == 'overdue'">
+                                            <span style="color: red;">Atrasado</span>
+                                        </t>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>

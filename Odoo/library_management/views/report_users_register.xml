@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_users_register">
+        <t t-call="web.html_container">
+            <t t-call="web.internal_layout">
+                <div class="page">
+                    <h2 style="text-align: center;">Informe de Usuarios Registrados</h2>
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr style="background-color: #f2f2f2;">
+                                <th style="width: 25%;">Nombre Completo</th>
+                                <th style="width: 25%;">Correo Electrónico</th>
+                                <th style="width: 25%;">Teléfono</th>
+                                <th style="width: 25%;">Fecha de Registro</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="docs" t-as="user">
+                                <tr>
+                                    <td><t t-esc="user.full_name or 'Sin nombre'"/></td>
+                                    <td><t t-esc="user.email or 'Sin email'"/></td>
+                                    <td><t t-esc="user.phone or 'No disponible'"/></td>
+                                    <td><t t-esc="user.registration_date or 'No registrada'"/></td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </t>
+        </t>
+    </template>
+</odoo>
